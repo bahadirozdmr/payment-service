@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "dgSpecHash": "MfqIOTTDvfE2zhEiuy/exyFw0mxaILeEDwuHIn7HjrY1gO30rNSACcq/HakKq8vKm0vuFOZz8VkJd2TE/tqMGA==",
+  "success": true,
+  "projectFilePath": "/Users/bahadirozdemir/SourceCode/payment-service/payment-service/payment-service.csproj",
+  "expectedPackageFiles": [
+    "/Users/bahadirozdemir/.nuget/packages/consul/1.6.10.4/consul.1.6.10.4.nupkg.sha512",
+    "/Users/bahadirozdemir/.nuget/packages/microsoft.aspnetcore.jsonpatch/3.1.22/microsoft.aspnetcore.jsonpatch.3.1.22.nupkg.sha512",
+    "/Users/bahadirozdemir/.nuget/packages/microsoft.aspnetcore.mvc.newtonsoftjson/3.1.22/microsoft.aspnetcore.mvc.newtonsoftjson.3.1.22.nupkg.sha512",
+    "/Users/bahadirozdemir/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
+    "/Users/bahadirozdemir/.nuget/packages/microsoft.extensions.configuration/3.0.0/microsoft.extensions.configuration.3.0.0.nupkg.sha512",
+    "/Users/bahadirozdemir/.nuget/packages/microsoft.extensions.configuration.abstractions/3.0.0/microsoft.extensions.configuration.abstractions.3.0.0.nupkg.sha512",
+    "/Users/bahadirozdemir/.nuget/packages/microsoft.extensions.configuration.fileextensions/3.0.0/microsoft.extensions.configuration.fileextensions.3.0.0.nupkg.sha512",
+    "/Users/bahadirozdemir/.nuget/packages/microsoft.extensions.configuration.json/3.0.0/microsoft.extensions.configuration.json.3.0.0.nupkg.sha512",
+    "/Users/bahadirozdemir/.nuget/packages/microsoft.extensions.fileproviders.abstractions/3.0.0/microsoft.extensions.fileproviders.abstractions.3.0.0.nupkg.sha512",
+    "/Users/bahadirozdemir/.nuget/packages/microsoft.extensions.fileproviders.physical/3.0.0/microsoft.extensions.fileproviders.physical.3.0.0.nupkg.sha512",
+    "/Users/bahadirozdemir/.nuget/packages/microsoft.extensions.filesystemglobbing/3.0.0/microsoft.extensions.filesystemglobbing.3.0.0.nupkg.sha512",
+    "/Users/bahadirozdemir/.nuget/packages/microsoft.extensions.primitives/3.0.0/microsoft.extensions.primitives.3.0.0.nupkg.sha512",
+    "/Users/bahadirozdemir/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/Users/bahadirozdemir/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512",
+    "/Users/bahadirozdemir/.nuget/packages/newtonsoft.json.bson/1.0.2/newtonsoft.json.bson.1.0.2.nupkg.sha512",
+    "/Users/bahadirozdemir/.nuget/packages/serilog/2.10.0/serilog.2.10.0.nupkg.sha512",
+    "/Users/bahadirozdemir/.nuget/packages/swashbuckle.aspnetcore.swagger/6.2.3/swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "/Users/bahadirozdemir/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.2.3/swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "/Users/bahadirozdemir/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.2.3/swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512",
+    "/Users/bahadirozdemir/.nuget/packages/winton.extensions.configuration.consul/3.1.2/winton.extensions.configuration.consul.3.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}
