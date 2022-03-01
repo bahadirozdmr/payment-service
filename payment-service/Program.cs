@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
@@ -36,12 +37,9 @@ namespace payment_service
             return loggerConfiguration.CreateLogger();
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args,IConfiguration appConfiguration) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                }).ConfigureAppConfiguration(builder =>
+        public static IWebHostBuilder CreateHostBuilder(string[] args,IConfiguration appConfiguration) =>
+            WebHost.CreateDefaultBuilder(args)
+                .UseStartup<Startup>().ConfigureAppConfiguration(builder =>
                 {
                     builder.AddConsul(
                         "config/payment-service",
@@ -53,6 +51,10 @@ namespace payment_service
                             options.PollWaitTime = TimeSpan.FromSeconds(5);
                             options.ReloadOnChange = true;
                         }).AddEnvironmentVariables();
-                });
+                })
+                .UseKestrel(((context, options) =>
+                {
+                    options.ListenAnyIP(5000);
+                }));
     }
 }
