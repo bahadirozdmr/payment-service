@@ -37,7 +37,7 @@ namespace payment_service
             return loggerConfiguration.CreateLogger();
         }
 
-        public static IWebHostBuilder CreateHostBuilder(string[] args,IConfiguration appConfiguration) =>
+        public static IWebHostBuilder CreateHostBuilder(string[] args, IConfiguration appConfiguration) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>().ConfigureAppConfiguration(builder =>
                 {
@@ -46,15 +46,18 @@ namespace payment_service
                         options =>
                         {
                             options.ConsulConfigurationOptions =
-                                cco => { cco.Address = new Uri(appConfiguration.GetSection(ConsulSection)[ConsulHost]); };
+                                cco =>
+                                {
+                                    cco.Address = new Uri(appConfiguration.GetSection(ConsulSection)[ConsulHost]);
+                                };
                             //options.Optional = true;
                             options.PollWaitTime = TimeSpan.FromSeconds(5);
                             options.ReloadOnChange = true;
                         }).AddEnvironmentVariables();
-                })
-                .UseKestrel(((context, options) =>
-                {
-                    options.ListenAnyIP(5000);
-                }));
+                });
+        //.UseKestrel(((context, options) =>
+        //{
+        //   options.ListenAnyIP(5000);
+        //}));
     }
 }
