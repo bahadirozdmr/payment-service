@@ -13,7 +13,7 @@ namespace payment_service.Configuration
         {
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v2", new OpenApiInfo { Title = "FoodService API", Version = "0.0.1" });
+                c.SwaggerDoc("v2", new OpenApiInfo { Title = "Payment API", Version = "0.0.1" });
             });
 
             return services;
@@ -27,7 +27,7 @@ namespace payment_service.Configuration
             });
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/v2/api-docs", "FoodService API");
+                c.SwaggerEndpoint("/v2/api-docs", "Payment API");
             });
             return app;
         }

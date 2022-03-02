@@ -22,7 +22,7 @@ namespace payment_service.Controllers
             _configuration = configuration;
         }
 
-        [HttpGet("/{paymentId}")]
+        [HttpGet("{paymentId}")]
         public ActionResult GetPayment(Guid paymentId)
         {
             if (paymentId == Guid.Empty)

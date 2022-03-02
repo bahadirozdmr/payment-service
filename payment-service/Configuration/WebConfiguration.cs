@@ -35,7 +35,7 @@ namespace payment_service.Configuration
 
             app.UseRouting();
             app.UseHttpMetrics();
-            app.UseAuthorization();
+            //app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
