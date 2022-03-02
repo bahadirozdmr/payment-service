@@ -1,11 +1,13 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this
 
+using System.Runtime.InteropServices.ComTypes;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using Prometheus;
 
 namespace payment_service.Configuration
 {
@@ -32,10 +34,12 @@ namespace payment_service.Configuration
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseHttpMetrics();
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapMetrics();
             });
 
 
