@@ -33,14 +33,14 @@ namespace payment_service
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env,IHostApplicationLifetime applicationLifetime)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
             app.UseApplicationWeb(env);
-            app.UseConsul(Configuration);
+            app.UseConsul(applicationLifetime,Configuration);
             app.UseApplicationSwagger();
             //app.UseAuthorization();
 

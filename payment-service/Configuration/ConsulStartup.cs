@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Microsoft.Extensions.Hosting;
 using payment_service.Configuration.Consul;
 
 namespace payment_service.Configuration
@@ -28,7 +29,7 @@ namespace payment_service.Configuration
             }));
         }
         
-        public static IApplicationBuilder UseConsul(this IApplicationBuilder app, IConfiguration configuration)
+        public static IApplicationBuilder UseConsul(this IApplicationBuilder app,IHostApplicationLifetime lifetime, IConfiguration configuration)
         {
             using (var scope = app.ApplicationServices.CreateScope())
             {
@@ -75,8 +76,13 @@ namespace payment_service.Configuration
                     }
                 }
 
+               
+              //  client.Agent.ServiceDeregister("7ed0351c-2765-4be8-87cd-7035b3b32cf3");
                 client.Agent.ServiceRegister(consulServiceRegistration);
-
+                lifetime.ApplicationStopping.Register(() =>
+                {
+                    client.Agent.ServiceDeregister(consulServiceRegistration.ID).Wait();
+                });
                 return app;
             }
         }
